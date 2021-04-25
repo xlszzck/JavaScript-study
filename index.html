@@ -4,6 +4,499 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      div {
+        height: 100%;
+      }
+      .left {
+        width: 200px;
+        background: #f00;
+        float: left;
+      }
+      .right {
+        width: 200px;
+        background: #0f0;
+        float: right;
+      }
+      .center {
+        background: #f0f;
+        overflow: hidden;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <div class="left">浮动元素</div>
+    <div class="right">浮动元素</div>
+    <div class="center">自适应</div>
+    <script
+      async
+      charset="utf-8"
+      defer
+      language="javascript"
+      src=""
+      type="text/javascript"
+    >
+      // async：可选，表示立即下载脚本，只对外部脚本文件有效。
+      // charset：可选，表示通过src属性指定的代码的字符集。
+      // defer：可选，表示脚本可以延迟到文档完全被解析和显示之后再执行，只对外部脚本文件有效。立即下载，延迟执行。
+      // type：可选，表示编写代码使用的脚本语言的内容类型。
+    </script>
+    <script>
+      // console.log(typeof null);
+      // let a;
+      // console.log(a);
+
+      // var num = new Number(13.3714);
+      // var n = num.toPrecision(2);
+      // console.log(n);
+
+      // console.log(NaN == NaN);
+      // console.log(isNaN(NaN)); //true
+      // console.log(isNaN(10)); //false（10是一个数值）
+      // console.log(isNaN('10')); //false（可以转换为数值10）
+      // console.log(isNaN('blue')); //true（不能转换为数值）
+      // console.log(isNaN(true)); //false（可以转换为数值1）
+
+      // var num1 = Number('Hello world!'); //NaN
+      // var num2 = Number(''); //0
+      // var num3 = Number('000011'); //11
+      // var num4 = Number(true); //1
+
+      // var num1 = parseInt('1234blue'); // 1234
+      // var num2 = parseInt(''); // NaN
+      // var num3 = parseInt('0xA'); // 10（十六进制数）
+      // var num4 = parseInt(22.5); // 22
+      // var num5 = parseInt('070'); // 56（八进制数）
+      // var num6 = parseInt('70'); // 70（十进制数）
+      // var num7 = parseInt('0xf'); // 15（十六进制数）
+
+      // var num = parseInt('0xAF', 16); //175
+      // var num1 = parseInt('AF', 16); //175
+      // var num2 = parseInt('AF'); //NaN
+
+      // var num1 = parseFloat('1234blue'); //1234（整数）
+      // var num2 = parseFloat('0xA'); //0
+      // var num3 = parseFloat('22.5'); //22.5
+      // var num4 = parseFloat('22.34.5'); //22.34
+      // var num5 = parseFloat('0908.5'); //908.5
+      // var num6 = parseFloat('3.125e7'); //31250000
+
+      // var value1 = 10;
+      // var value2 = true;
+      // var value3 = null;
+      // var value4;
+      // console.log(String(value1)); // "10"
+      // console.log(String(value2)); // "true"
+      // console.log(String(value3)); // "null"
+      // console.log(String(value4)); // "undefined"
+
+      // var found = true;
+      // // var result = found && someUndefinedVariable; // 这里会发生错误
+      // // console.log(result); // 这一行不会执行
+
+      // var found2 = true;
+      // var result2 = found2 || someUndefinedVariable; // 不会发生错误
+      // console.log(result2); // 会执行（"true"）
+
+      // function doAdd(num1, num2) {
+      //   console.log(arguments);
+      //   arguments[1] = 10;
+      //   console.log(arguments);
+      //   console.log(arguments[0], num2, arguments[1]);
+      // }
+
+      // doAdd(10);
+
+      // var color = 'blue';
+      // function changeColor() {
+      //   if (color === 'blue') {
+      //     color = 'red';
+      //   } else {
+      //     color = 'blue';
+      //   }
+      // }
+      // changeColor();
+      // console.log('Color is now ' + color);
+
+      // var color = 'blue';
+      // function changeColor() {
+      //   var anotherColor = 'red';
+      //   function swapColors() {
+      //     var tempColor = anotherColor;
+      //     anotherColor = color;
+      //     color = tempColor;
+
+      //     // 这里可以访问 color、anotherColor 和 tempColor
+      //   }
+      //   // 这里可以访问 color 和 anotherColor，但不能访问 tempColor
+      //   swapColors();
+      // }
+      // // 这里只能访问 color
+      // changeColor();
+      // console.log(color);
+
+      // var colors = ['red', 'blue', 'green']; // 创建一个包含 3 个字符串的数组
+      // console.log(colors.toString()); // red,blue,green
+      // console.log(colors.valueOf()); // red,blue,green
+      // console.log(colors); // red,blue,green
+
+      // var values = [0, 1, 5, 10, 15];
+      // values.sort((a, b) => a - b); // 如果a < b，返回负值，a排前面
+
+      // Array.prototype.aaa = function () {
+      //   return this.concat(this);
+      // };
+      // console.log([1, 2, 3, 4, 5].aaa());
+
+      // function outer() {
+      //   inner();
+      // }
+      // function inner() {
+      //   console.log(String(inner.caller));
+      // }
+      // outer();
+      // console.log(outer.prototype);
+
+      // var global = (function () {
+      //   return this;
+      // })();
+      // console.log(global);
+
+      // var person = { name: 'Nicholas' };
+      // Object.defineProperty(person, 'name', {
+      //   writable: false,
+      // });
+
+      // console.log(person.name); //"Nicholas"
+      // person.name = 'Greg';
+      // console.log(person.name); //"Nicholas"
+      // for (const key in person) {
+      //   console.log(key);
+      // }
+
+      // var book = {
+      //   _year: 2004,
+      //   edition: 1,
+      //   year: {
+      //     get: function () {
+      //       return this._year;
+      //     },
+      //     set: function (newValue) {
+      //       if (newValue > 2004) {
+      //         this._year = newValue;
+      //         this.edition += newValue - 2004;
+      //       }
+      //     },
+      //   },
+      // };
+      // Object.defineProperties(book, {
+      //   _year: {
+      //     value: 2004,
+      //   },
+
+      //   edition: {
+      //     value: 1,
+      //   },
+      // });
+      // console.log(book);
+      // book.year = 2005;
+      // console.log(book.edition); //2
+      // console.log(book.year);
+
+      // function Person() {}
+      // Person.prototype.name = 'Nicholas';
+      // Person.prototype.age = 29;
+      // Person.prototype.job = 'Software Engineer';
+      // Person.prototype.sayName = function () {
+      //   console.log(this.name);
+      // };
+      // var person1 = new Person();
+      // person1.sayName(); //"Nicholas"
+      // var person2 = new Person();
+      // person2.name = '2';
+      // // person2.__proto__.name = '2';
+      // // delete person2.__proto__.name; //undefined
+      // person2.sayName(); //"Nicholas"
+      // console.log(person1.sayName == person2.sayName); //true
+
+      // console.log(Object.getPrototypeOf(person1) == Person.prototype); //true
+      // console.log(Object.getPrototypeOf(person1));
+      // console.log(person2.name);
+      // console.log(Object.getPrototypeOf(person1).name); //"Nicholas"
+
+      // console.log(Object.getOwnPropertyDescriptor(person2, 'name'));
+
+      // for (var prop in person2) {
+      //   console.log(prop);
+      // }
+      // console.log(Object.keys(person2));
+
+      // function Person2() {}
+
+      // var friend = new Person2();
+      // Person2.prototype.name = '原来的';
+
+      // Person2.prototype = {
+      //   constructor: Person2,
+      //   name: 'Nicholas',
+      //   age: 29,
+      //   job: 'Software Engineer',
+      //   sayName: function () {
+      //     console.log(this.name);
+      //   },
+      // };
+      // // friend.sayName(); //error
+      // console.log(friend.name);
+      // var friend2 = new Person2();
+      // console.log(friend2.name);
+
+      // function SuperType() {
+      //   this.property = true;
+      // }
+      // SuperType.prototype.getSuperValue = function () {
+      //   return this.property;
+      // };
+      // function SubType() {
+      //   this.subproperty = false;
+      // }
+      // //继承了 SuperType
+      // SubType.prototype = new SuperType();
+      // SubType.prototype.getSubValue = function () {
+      //   return this.subproperty;
+      // };
+      // var instance = new SubType();
+      // console.log(instance.getSuperValue()); //true
+
+      // console.log(instance instanceof SuperType);
+
+      // function SuperTypeA() {
+      //   this.colors = ['red', 'blue', 'green'];
+      // }
+      // function SubTypeB() {
+      //   //继承了 SuperType
+      //   SuperTypeA.call(this);
+      // }
+      // console.log(SubTypeB.prototype);
+
+      // function createComparisonFunction(propertyName) {
+      //   return function (object1, object2) {
+      //     var value1 = object1[propertyName];
+      //     var value2 = object2[propertyName];
+
+      //     if (value1 < value2) {
+      //       return -1;
+      //     } else if (value1 > value2) {
+      //       return 1;
+      //     } else {
+      //       return 0;
+      //     }
+      //   };
+      // }
+
+      // //创建函数
+      // var compareNames = createComparisonFunction('name');
+      // //调用函数
+      // var result = compareNames({ name: 'Nicholas' }, { name: 'Greg' });
+      // var result2 = compareNames({ name: 'Greg' }, { name: 'Nicholas' });
+
+      // console.log(result, result2);
+      //解除对匿名函数的引用（以便释放内存）
+      // compareNames = null;
+
+      // console.log([1] instanceof Object); // true
+      // console.log(createComparisonFunction instanceof Object); // true
+      // console.log({} instanceof Object); // true
+      // console.log(Boolean instanceof Object); // true
+      // console.log(Number instanceof Object); // true
+      // console.log(String instanceof Object); // true
+      // console.log(Function.prototype);
+
+      // ☆ 箭头函数
+
+      // function foo() {
+      //   setTimeout(() => {
+      //     console.log('id:', this.id);
+      //   }, 100);
+      // }
+
+      // function foo2() {
+      //   setTimeout(function () {
+      //     console.log('id:', this.id);
+      //   }, 100);
+      // }
+
+      // var id = 21;
+
+      // foo.call({ id: 42 });
+      // foo2.call({ id: 42 });
+
+      // function Timer() {
+      //   this.s1 = 0;
+      //   this.s2 = 0;
+      //   // 箭头函数
+      //   setInterval(() => this.s1++, 1000);
+      //   // 普通函数
+      //   setInterval(function () {
+      //     console.log(this);
+      //     this.s2++;
+      //   }, 1000);
+      // }
+
+      // var timer = new Timer();
+
+      // setTimeout(() => console.log('s1: ', timer.s1), 3100);
+      // setTimeout(() => console.log('s2: ', timer.s2), 3100);
+
+      // ☆ 原型
+
+      // console.log(Object.prototype === Function.prototype.__proto__); // true
+      // console.log(foo.__proto__ === Function.prototype); // true
+      // console.log(foo.__proto__.__proto__ === Object.prototype); // true
+      // console.log([1].toString());
+
+      // ☆ class类
+
+      class Point {
+        constructor(x, y) {
+          this.x = x;
+          this.y = y;
+        }
+
+        toString() {
+          return "(" + this.x + ", " + this.y + ")";
+        }
+
+        toString2 = () => {
+          return "(" + this.x + ", " + this.y + ")";
+        };
+      }
+
+      const point = new Point();
+      console.log(
+        point.hasOwnProperty("x"),
+        point.hasOwnProperty("y"),
+        point.hasOwnProperty("z"),
+        point.hasOwnProperty("toString"),
+        point.hasOwnProperty("toString2")
+      );
+
+      class ColorPoint extends Point {
+        constructor(x, y, color) {
+          super(x, y); // 调用父类的constructor(x, y)
+          this.color = color;
+        }
+
+        toString() {
+          return this.color + " " + super.toString(); // 调用父类的toString()
+        }
+      }
+
+      let colorPoint = new ColorPoint(25, 8, "green");
+      console.log(colorPoint.toString());
+
+      // class B {}
+      // const b = new B();
+
+      // console.log(b.constructor === B.prototype.constructor); // true
+      // console.log(b.constructor === B); // true
+
+      // console.log(1);
+
+      // setTimeout(() => {
+      //   console.log(2);
+      // }, 0);
+
+      // console.log(3);
+
+      // async function fetchUser() {
+      //   // return new Promise((resolve) => {
+      //   //   resolve('111');
+      //   // });
+      //   throw new Error('111');
+      // }
+      // fetchUser()
+      //   .then((res) => {
+      //     console.log(res);
+      //   })
+      //   .catch((err) => {
+      //     console.log(err);
+      //   });
+
+      // async function getUserByAsync() {
+      //   console.log(fetchUser());
+      //   let user = await fetchUser();
+      //   console.log(user);
+      // }
+
+      // getUserByAsync();
+
+      // function Person(name, age, job) {
+      //   this.name = name;
+      //   this.age = age;
+      //   this.job = job;
+      //   this.sayName = function () {
+      //     alert(this.name);
+      //   };
+      // }
+      // Object.getOwnPropertyNames(Person).forEach((item) => {
+      //   console.log(Person[item]);
+      // });
+
+      function person(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+      person.prototype.job = "web前端开发工程师";
+      person.prototype.salary = function () {
+        return `${this.name}的薪资是20k`;
+      };
+
+      function NEW() {
+        let obj = {};
+        construct = [].shift.call(arguments); // 得到构造函数 Array.protptype原型上的方法对传入参数进行操作
+        console.log(construct);
+        obj.__proto__ = construct.prototype; // 访问方法
+        construct.apply(obj, arguments); // 让obj拥有Construct中的属性
+        console.log(construct);
+        return obj;
+      }
+      const Person2 = NEW(person, "小明", "22");
+      console.log(
+        Object.prototype.constructor === Object,
+        Object instanceof Object
+      );
+      let z = {};
+      console.log(z?.b?.c);
+
+      console.log(Boolean([]), ![], [] == ![]);
+      console.log(Number([]), Number(![]));
+
+      console.log("script start");
+
+      setTimeout(function () {
+        console.log("setTimeout");
+      }, 0);
+
+      Promise.resolve().then(function () {
+        queueMicrotask(() => console.log("queueMicrotask"));
+        console.log("promise");
+      });
+
+      console.log("script end");
+
+      const mapper = new Map([
+        ["1", "a"],
+        ["2", "b"],
+      ]);
+      Array.from(mapper.values());
+    </script>
+  </body>
 </html>
